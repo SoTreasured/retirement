@@ -1,20 +1,47 @@
-<<!DOCTYPE html>
-<html>
-    <head><title>check your retirement status</title>
+<!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>check your retirement status</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset = "utf-8" />
+        <meta charset="utf-8" />
     </head>
 
     <body>
-       
+
+
 
 
         <script>
             var yourName = window.prompt("Find out how many years are left for you to be retired; \n Please enter your name");
             var yourYear = window.prompt(" What year were you born? ");
-            var yourAge = 2020 - yourYear 
+            var yourAge = 2020 - yourYear ;
             var yourGender = window.prompt("Select an Option : \n1.Male\n2. Female");
-            var yourStatus = window.prompt("Select an Option : \n1.Married\n2. Single\n3. Divorced");
+            var yourStatus = window.prompt("Select an Option by typing in the Appropriate Index Number : \n1.Married\n2. Single\n3. Divorced");
+
+
+            
+// Male and married
+(yourGender == 1 || yourGender == "male") && (yourStatus == 1 || yourStatus == "married") ?
+ (yourAge <= 60 ? alert("Hello " + yourName + ", you have " + (60 - yourAge) + " years left to retire") : alert("Hello " + yourName + ", you are " + yourAge + " years old and are supposed to have been retired.")) : null;
+
+// Female and married
+(yourGender == 2 || yourGender == "female") && (yourStatus == 1 || yourStatus == "married") ?
+ (yourAge <= 55 ? alert("Hello " + yourName + ", you have " + (55 - yourAge) + " years left to retire") : alert("Hello " + yourName + ", you are " + yourAge + " years old and are supposed to have been retired.")) : null;
+
+// Male and single/divorced
+(yourGender == 1 || yourGender == "male") && (yourStatus == 2 || yourStatus == "single" || yourStatus == 3 || yourStatus == "divorced") ?
+ (yourAge <= 70 ? alert("Hello " + yourName + ", you have " + (70 - yourAge) + " years left to retire") : alert("Hello " + yourName + ", you are " + yourAge + " years old and are supposed to have been retired.")) : null;
+
+// Female and single/divorced
+(yourGender == 2 || yourGender == "female") && (yourStatus == 2 || yourStatus == "single" || yourStatus == 3 || yourStatus == "divorced") ?
+ (yourAge <= 65 ? alert("Hello " + yourName + ", you have " + (65 - yourAge) + " years left to retire") : alert("Hello " + yourName + ", you are " + yourAge + " years old and are supposed to have been retired.")) : null;
+
+// A wrong input
+(yourGender != 1 && yourGender != "male" && yourGender != 2 && yourGender != "female" && yourStatus != 1 && yourStatus != "married" && yourStatus != 2 && yourStatus != "single" && yourStatus != 3 && yourStatus != "divorced") ?
+ alert("Hello " + yourName + "!\n\nSorry, you must have entered an invalid input somewhere.\n\nPlease refresh the page and try to enter your details correctly") : null;
+            
         </script>
     </body>
-</html>
+
+    </html>
